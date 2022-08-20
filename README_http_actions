@@ -1,0 +1,97 @@
+############################
+###################
+##########
+
+TP FINAL NODE DBUCETA
+
+Archivos Adjuntos:
+
+postman.png      // contiene un print del programa con las distintas url's probadas
+productosDB.png  // contiene un print de la Base Productos 
+categoriasDB.png // contiene un print de la Base Categorias
+usuariosDB.png   // contiene un print de la Base Usuarios
+
+##########
+###################
+############################
+
+DESCRIPCION URL's , ACCIONES, VERBOS Y JSON.
+
+###########
+PRODUCTOS:
+###########
+
+GET (devuelve todos los productos en DB)
+url: http://localhost:3000/productos
+
+GET by Id: (devuelve los productos x Id)
+url: http://localhost:3000/productos/62f2105379fc1146284b3f1c
+
+GET Buscar por "String" en descripcion
+url: http://localhost:3000/productos/?buscar=Gol
+
+GET Destacados == True
+url: http://localhost:3000/productos/?destacados=1
+
+POST (Crear un producto en la DB)
+url: http://localhost:3000/productos
+body: 
+{
+"name": "Nokia 1100",
+"precio": "1000",
+"descripcion": "Nokia 1100",
+"destacado": false,
+"category": "Celular"
+}
+
+PUT Update de Producto en la DB by Id
+url: http://localhost:3000/productos/62f4d63e144f37887dfe699b
+body:
+{
+"name": "Fiat Grand Siena",
+"precio": "3000",
+"descripcion": "Fiat Siena",
+"destacado": true,
+"category": "Auto"
+}
+
+DELETE Eliminar un producto en la DB by Id
+url: http://localhost:3000/productos/62f4d808144f37887dfe69a0
+
+
+############
+CATEGORIAS:
+############
+
+GET (Devuelve todas las categorias)
+http://localhost:3000/categorias
+
+
+POST (Crear una categoria)
+url: http://localhost:3000/categorias
+body:
+{
+    "categorias_name": "Auto"
+}
+
+##########
+USUARIOS:
+##########
+
+POST (crea usuario en la DB)
+url: http://localhost:3000/usuarios
+body:
+{
+"nombre": "Pipo",
+"email": "fff1@qq.com",
+"password": "Password1"
+}
+
+POST (Devuelve Token si existe el usuario)
+
+url: http://localhost:3000/usuarios/login
+body: 
+{
+"email": "fff1@qq.com",
+"password": "Password1"
+}
